@@ -66,6 +66,12 @@ const { title = "Principios Visuales en UI/UX — Infografía" } = Astro.props;
                         class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors"
                         >05.ITERACIÓN</a
                     >
+                    <button
+                        id="print-btn"
+                        class="ml-4 font-mono font-bold text-xs bg-brutal-yellow text-dark px-4 py-1 border-2 border-cream shadow-[3px_3px_0px_#FFFFFF] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+                    >
+                        PDF ↓
+                    </button>
                 </div>
                 <button
                     id="mobile-menu-btn"
@@ -270,6 +276,14 @@ const { title = "Principios Visuales en UI/UX — Infografía" } = Astro.props;
                     }
                 });
             });
+
+            // Print function
+            const printBtn = document.getElementById("print-btn");
+            if (printBtn) {
+                printBtn.addEventListener("click", () => {
+                    window.print();
+                });
+            }
         </script>
     </body>
 </html>
