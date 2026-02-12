@@ -1,0 +1,24 @@
+---
+interface Props {
+    label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div
+    class="animate-on-scroll flex items-start gap-4 p-5 bg-brutal-yellow/10 border-l-4 border-brutal-yellow"
+>
+    <span
+        class="font-mono font-bold text-brutal-yellow text-2xl leading-none shrink-0"
+        >▶</span
+    >
+    <div>
+        <span class="font-display font-bold text-base md:text-lg block mb-1"
+            >{label}</span
+        >
+        <div class="font-body text-sm md:text-base opacity-80 leading-relaxed">
+            <slot />
+        </div>
+    </div>
+</div>

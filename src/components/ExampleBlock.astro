@@ -1,0 +1,25 @@
+---
+interface Props {
+    title: string;
+    color?: string;
+}
+
+const { title, color = "brutal-yellow" } = Astro.props;
+---
+
+<div
+    class="animate-on-scroll border-brutal-thick bg-white p-6 md:p-10 relative"
+    style={`border-left: 8px solid var(--color-${color});`}
+>
+    <span
+        class="absolute -top-4 left-6 font-mono font-bold text-xs bg-dark text-cream px-4 py-1.5 tracking-widest"
+    >
+        EJEMPLO
+    </span>
+    <h4 class="font-display font-bold text-xl md:text-2xl mb-4 mt-2">
+        {title}
+    </h4>
+    <div class="space-y-6">
+        <slot />
+    </div>
+</div>

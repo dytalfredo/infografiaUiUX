@@ -1,0 +1,185 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+import ConceptCard from "./ConceptCard.astro";
+import ExampleBlock from "./ExampleBlock.astro";
+import ImagePlaceholder from "./ImagePlaceholder.astro";
+import KeyPoint from "./KeyPoint.astro";
+---
+
+<section
+    id="seccion-2"
+    class="py-20 md:py-32 px-4 bg-dark text-cream border-b-4 border-brutal-blue"
+>
+    <div class="max-w-7xl mx-auto">
+        <SectionHeader
+            number="02"
+            expositor="EXPOSITOR 2"
+            title="Semejanza y Continuidad"
+            subtitle="La guía del ojo: cómo el cerebro agrupa por atributos y sigue caminos visuales"
+            color="brutal-blue"
+        />
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 stagger-children"
+        >
+            <ConceptCard
+                title="Principio de Semejanza"
+                icon="◆"
+                color="brutal-blue"
+            >
+                <p>
+                    El cerebro agrupa objetos que comparten <strong
+                        >atributos visuales</strong
+                    >: color, tamaño, forma u orientación. Esto crea <strong
+                        >consistencia</strong
+                    > en la interfaz.
+                </p>
+                <p>
+                    La semejanza ayuda a identificar qué elementos tienen el <strong
+                        >mismo comportamiento</strong
+                    >. Por ejemplo, todos los botones de "Eliminar" deben ser
+                    rojos, todos los de "Confirmar" verdes.
+                </p>
+            </ConceptCard>
+
+            <ConceptCard
+                title="Principio de Continuidad"
+                icon="→"
+                color="brutal-blue"
+            >
+                <p>
+                    El ojo es guiado a través de un <strong
+                        >camino, línea o curva</strong
+                    >. Preferimos seguir un <strong>flujo suave</strong> en lugar
+                    de cambios bruscos.
+                </p>
+                <p>
+                    Se usa para el <strong>storytelling visual</strong>,
+                    llevando al usuario desde el encabezado hasta el llamado a
+                    la acción (CTA) de forma natural.
+                </p>
+            </ConceptCard>
+        </div>
+
+        <KeyPoint label="Contenido Técnico">
+            La semejanza establece patrones de interacción predecibles: si un
+            elemento se ve como un botón, el usuario espera poder hacer clic. La
+            continuidad se aplica en procesos paso a paso, timelines y flujos de
+            navegación para mantener al usuario orientado.
+        </KeyPoint>
+
+        <!-- Ejemplo: Tienda Online -->
+        <div class="mt-12">
+            <ExampleBlock
+                title="Semejanza en Tienda Online + Continuidad en Steppers"
+                color="brutal-blue"
+            >
+                <p
+                    class="font-body text-base md:text-lg text-dark/80 leading-relaxed"
+                >
+                    En una tienda online, todos los productos tienen el <strong
+                        >mismo tamaño de tarjeta</strong
+                    >
+                    y el <strong>mismo estilo de precio</strong> (semejanza). En los
+                    procesos de registro, se usan
+                    <strong>líneas que conectan puntos</strong> para indicar que el
+                    proceso sigue un orden (continuidad).
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <ImagePlaceholder
+                        label="Tarjetas de producto con semejanza"
+                        step="1"
+                    />
+                    <ImagePlaceholder
+                        label="Stepper/Timeline de registro"
+                        step="2"
+                    />
+                </div>
+
+                <!-- Visual Demo: Product Cards -->
+                <div class="mt-8 animate-on-scroll">
+                    <p
+                        class="font-mono text-xs font-bold mb-4 tracking-wider text-brutal-blue"
+                    >
+                        DEMO — SEMEJANZA EN TARJETAS
+                    </p>
+                    <div class="grid grid-cols-3 gap-4">
+                        {
+                            [1, 2, 3].map((i) => (
+                                <div class="border-3 border-dark bg-white text-dark p-4 shadow-brutal">
+                                    <div class="w-full aspect-square bg-brutal-gray mb-3 border-2 border-dark" />
+                                    <p class="font-display font-bold text-sm">
+                                        Producto {i}
+                                    </p>
+                                    <p class="font-mono text-brutal-blue font-bold text-lg">
+                                        $29.99
+                                    </p>
+                                    <button class="w-full mt-2 bg-dark text-cream font-mono text-xs py-2 border-2 border-dark hover:bg-brutal-blue transition-colors">
+                                        AGREGAR
+                                    </button>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <!-- Visual Demo: Stepper -->
+                <div class="mt-8 animate-on-scroll">
+                    <p
+                        class="font-mono text-xs font-bold mb-4 tracking-wider text-brutal-blue"
+                    >
+                        DEMO — CONTINUIDAD EN STEPPER
+                    </p>
+                    <div
+                        class="flex items-center justify-between max-w-lg mx-auto"
+                    >
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-brutal-blue border-3 border-dark flex items-center justify-center text-white font-bold text-sm"
+                            >
+                                1
+                            </div>
+                            <span class="text-xs font-mono mt-2 text-dark"
+                                >Datos</span
+                            >
+                        </div>
+                        <div class="flex-1 h-1 bg-brutal-blue mx-2"></div>
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-brutal-blue border-3 border-dark flex items-center justify-center text-white font-bold text-sm"
+                            >
+                                2
+                            </div>
+                            <span class="text-xs font-mono mt-2 text-dark"
+                                >Envío</span
+                            >
+                        </div>
+                        <div class="flex-1 h-1 bg-dark/30 mx-2"></div>
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-dark/30 border-3 border-dark flex items-center justify-center text-cream font-bold text-sm"
+                            >
+                                3
+                            </div>
+                            <span class="text-xs font-mono mt-2 text-dark/50"
+                                >Pago</span
+                            >
+                        </div>
+                        <div class="flex-1 h-1 bg-dark/30 mx-2"></div>
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 rounded-full bg-dark/30 border-3 border-dark flex items-center justify-center text-cream font-bold text-sm"
+                            >
+                                4
+                            </div>
+                            <span class="text-xs font-mono mt-2 text-dark/50"
+                                >Listo</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </ExampleBlock>
+        </div>
+    </div>
+</section>

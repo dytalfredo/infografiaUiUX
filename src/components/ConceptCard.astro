@@ -1,0 +1,30 @@
+---
+interface Props {
+    title: string;
+    color?: string;
+    icon?: string;
+}
+
+const { title, color = "brutal-yellow", icon = "→" } = Astro.props;
+---
+
+<div
+    class={`border-brutal bg-white p-6 md:p-8 shadow-brutal hover:shadow-brutal-lg transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 animate-on-scroll`}
+>
+    <div class="flex items-start gap-3 mb-4">
+        <span
+            class={`inline-flex items-center justify-center w-10 h-10 border-3 border-dark font-bold text-lg shrink-0`}
+            style={`background-color: var(--color-${color});`}
+        >
+            {icon}
+        </span>
+        <h3 class="font-display font-bold text-xl md:text-2xl leading-tight">
+            {title}
+        </h3>
+    </div>
+    <div
+        class="font-body text-base md:text-lg leading-relaxed text-dark/80 space-y-3"
+    >
+        <slot />
+    </div>
+</div>

@@ -1,0 +1,40 @@
+---
+interface Props {
+    label: string;
+    step?: string;
+    aspect?: string;
+    class?: string;
+}
+
+const {
+    label,
+    step,
+    aspect = "aspect-video",
+    class: className = "",
+} = Astro.props;
+---
+
+<div
+    class={`img-placeholder ${aspect} rounded-none border-brutal bg-white/50 relative group shadow-brutal transition-all hover:shadow-brutal-lg ${className}`}
+>
+    <div
+        class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10"
+    >
+        {
+            step && (
+                <span class="font-mono font-bold text-xs bg-dark text-cream px-3 py-1 mb-3 tracking-wider">
+                    PASO {step}
+                </span>
+            )
+        }
+        <span class="font-display font-bold text-lg md:text-xl text-dark/70"
+            >{label}</span
+        >
+        <span class="font-mono text-xs text-dark/40 mt-2"
+            >Inserta tu imagen aquí</span
+        >
+    </div>
+    <div class="absolute bottom-3 right-3 font-mono text-xs text-dark/30">
+        📷 IMG
+    </div>
+</div>

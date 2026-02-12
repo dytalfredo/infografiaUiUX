@@ -1,0 +1,166 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+import ConceptCard from "./ConceptCard.astro";
+import ExampleBlock from "./ExampleBlock.astro";
+import ImagePlaceholder from "./ImagePlaceholder.astro";
+import KeyPoint from "./KeyPoint.astro";
+---
+
+<section id="seccion-3" class="py-20 md:py-32 px-4 border-b-4 border-dark">
+    <div class="max-w-7xl mx-auto">
+        <SectionHeader
+            number="03"
+            expositor="EXPOSITOR 3"
+            title="Señalética Digital y Asequibilidad"
+            subtitle="Cómo el diseño sugiere su propio uso y guía al usuario en el espacio digital"
+            color="brutal-red"
+        />
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 stagger-children"
+        >
+            <ConceptCard
+                title="Señalética Digital"
+                icon="🧭"
+                color="brutal-red"
+            >
+                <p>
+                    Es el <strong>sistema de información visual</strong> que permite
+                    al usuario ubicarse en el espacio digital. Se basa en <strong
+                        >iconos, tipografía y color</strong
+                    > para dar direcciones claras.
+                </p>
+                <p>
+                    Se logra mediante la <strong>jerarquía visual</strong>:
+                    hacer lo más importante más grande o brillante, y el uso de <strong
+                        >iconos universales</strong
+                    > (🏠 = inicio, 🔍 = buscar).
+                </p>
+            </ConceptCard>
+
+            <ConceptCard
+                title="Affordance (Asequibilidad)"
+                icon="👆"
+                color="brutal-red"
+            >
+                <p>
+                    Es la capacidad de un elemento para <strong
+                        >sugerir su uso</strong
+                    >. Un botón con sombra parece que se puede <em>"hundir"</em
+                    >, lo que indica que es <strong>clicable</strong>.
+                </p>
+                <p>
+                    Buen affordance = el usuario <strong
+                        >sabe qué hacer sin instrucciones</strong
+                    >. Un campo de texto con borde y placeholder sugiere que se
+                    puede escribir en él.
+                </p>
+            </ConceptCard>
+        </div>
+
+        <KeyPoint label="Contenido Técnico">
+            El concepto de Affordance fue popularizado por Don Norman. Un botón
+            con sombra y relieve "aforda" (sugiere) ser presionado. Un enlace
+            subrayado "aforda" ser clicado. Si el diseño visual no comunica la
+            función, el usuario se pierde.
+        </KeyPoint>
+
+        <!-- Ejemplo: Breadcrumbs -->
+        <div class="mt-12">
+            <ExampleBlock
+                title="Breadcrumbs — La Señalética de la Arquitectura de Información"
+                color="brutal-red"
+            >
+                <p
+                    class="font-body text-base md:text-lg text-dark/80 leading-relaxed"
+                >
+                    El uso del <strong>"Breadcrumb"</strong> o migas de pan le dice
+                    al usuario exactamente
+                    <strong>dónde está parado</strong> y <strong
+                        >cómo retroceder</strong
+                    >. Es la señalética pura de la arquitectura de información.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <ImagePlaceholder label="Ejemplo de breadcrumbs" step="1" />
+                    <ImagePlaceholder label="Botones con affordance" step="2" />
+                </div>
+
+                <!-- Visual Demo: Breadcrumb -->
+                <div class="mt-8 animate-on-scroll">
+                    <p
+                        class="font-mono text-xs font-bold mb-4 tracking-wider text-brutal-red"
+                    >
+                        DEMO — BREADCRUMBS
+                    </p>
+                    <div class="border-brutal bg-white p-6">
+                        <div
+                            class="flex items-center gap-2 font-mono text-sm flex-wrap"
+                        >
+                            <a
+                                href="#"
+                                class="text-brutal-blue underline hover:text-brutal-red transition-colors"
+                                >🏠 Inicio</a
+                            >
+                            <span class="text-dark/40">›</span>
+                            <a
+                                href="#"
+                                class="text-brutal-blue underline hover:text-brutal-red transition-colors"
+                                >Electrónica</a
+                            >
+                            <span class="text-dark/40">›</span>
+                            <a
+                                href="#"
+                                class="text-brutal-blue underline hover:text-brutal-red transition-colors"
+                                >Celulares</a
+                            >
+                            <span class="text-dark/40">›</span>
+                            <span class="font-bold text-dark"
+                                >iPhone 15 Pro</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Demo: Affordance Buttons -->
+                <div class="mt-8 animate-on-scroll">
+                    <p
+                        class="font-mono text-xs font-bold mb-4 tracking-wider text-brutal-red"
+                    >
+                        DEMO — AFFORDANCE EN BOTONES
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border-brutal bg-white p-6 text-center">
+                            <p
+                                class="font-mono text-xs text-brutal-green font-bold mb-4"
+                            >
+                                ✓ BUEN AFFORDANCE
+                            </p>
+                            <button
+                                class="bg-brutal-blue text-white font-bold px-8 py-3 border-3 border-dark shadow-brutal hover:shadow-brutal-lg hover:-translate-y-1 transition-all cursor-pointer"
+                            >
+                                Comprar Ahora
+                            </button>
+                            <p class="text-xs text-dark/50 mt-3">
+                                Sombra + relieve = "¡Púlsame!"
+                            </p>
+                        </div>
+                        <div class="border-brutal bg-white p-6 text-center">
+                            <p
+                                class="font-mono text-xs text-brutal-red font-bold mb-4"
+                            >
+                                ✗ MAL AFFORDANCE
+                            </p>
+                            <span class="text-dark/60 text-sm"
+                                >Comprar Ahora</span
+                            >
+                            <p class="text-xs text-dark/50 mt-3">
+                                Texto plano = ¿Es un botón? ¿Un texto?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </ExampleBlock>
+        </div>
+    </div>
+</section>

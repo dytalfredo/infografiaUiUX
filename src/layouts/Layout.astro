@@ -1,6 +1,8 @@
 ---
+import "../styles/global.css";
+
 interface Props {
-  title?: string;
+    title?: string;
 }
 
 const { title = "Principios Visuales en UI/UX — Infografía" } = Astro.props;
@@ -8,143 +10,266 @@ const { title = "Principios Visuales en UI/UX — Infografía" } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Infografía interactiva sobre los Principios Visuales en el Diseño de Interfaces (UI/UX): Gestalt, Señalética Digital, Prototipado y Pruebas de Usuario." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
-    <title>{title}</title>
-  </head>
-  <body class="bg-cream text-dark font-body">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark text-cream border-b-4 border-brutal-yellow">
-      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="#hero" class="font-display font-bold text-xl tracking-tight hover:text-brutal-yellow transition-colors">
-          UI/UX<span class="text-brutal-yellow">.</span>INFO
-        </a>
-        <div class="hidden md:flex items-center gap-1">
-          <a href="#seccion-1" class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors">01.GESTALT</a>
-          <a href="#seccion-2" class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors">02.SEMEJANZA</a>
-          <a href="#seccion-3" class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors">03.SEÑALÉTICA</a>
-          <a href="#seccion-4" class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors">04.PROTOTIPADO</a>
-          <a href="#seccion-5" class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors">05.ITERACIÓN</a>
-        </div>
-        <button id="mobile-menu-btn" class="md:hidden border-2 border-cream px-3 py-1 font-mono text-sm hover:bg-brutal-yellow hover:text-dark hover:border-brutal-yellow transition-colors">
-          MENÚ
-        </button>
-      </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden border-t-2 border-brutal-yellow bg-dark">
-        <div class="flex flex-col px-4 py-3 gap-2">
-          <a href="#seccion-1" class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow">01 — GESTALT</a>
-          <a href="#seccion-2" class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow">02 — SEMEJANZA</a>
-          <a href="#seccion-3" class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow">03 — SEÑALÉTICA</a>
-          <a href="#seccion-4" class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow">04 — PROTOTIPADO</a>
-          <a href="#seccion-5" class="font-mono text-sm py-2 hover:text-brutal-yellow">05 — ITERACIÓN</a>
-        </div>
-      </div>
-    </nav>
-
-    <main>
-      <slot />
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-cream border-t-4 border-brutal-yellow py-12 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <h3 class="font-display font-bold text-2xl mb-4">UI/UX<span class="text-brutal-yellow">.</span>INFO</h3>
-            <p class="font-body text-sm text-gray-400 leading-relaxed">
-              Infografía interactiva sobre los Principios Visuales en el Diseño de Interfaces. 
-              Proyecto educativo IUJO.
-            </p>
-          </div>
-          <div>
-            <h4 class="font-mono font-bold text-brutal-yellow mb-4 text-sm tracking-wider">SECCIONES</h4>
-            <ul class="space-y-2">
-              <li><a href="#seccion-1" class="text-sm hover:text-brutal-yellow transition-colors">Gestalt y Proximidad</a></li>
-              <li><a href="#seccion-2" class="text-sm hover:text-brutal-yellow transition-colors">Semejanza y Continuidad</a></li>
-              <li><a href="#seccion-3" class="text-sm hover:text-brutal-yellow transition-colors">Señalética y Affordance</a></li>
-              <li><a href="#seccion-4" class="text-sm hover:text-brutal-yellow transition-colors">Prototipado</a></li>
-              <li><a href="#seccion-5" class="text-sm hover:text-brutal-yellow transition-colors">Pruebas e Iteración</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-mono font-bold text-brutal-yellow mb-4 text-sm tracking-wider">TECNOLOGÍAS</h4>
-            <div class="flex flex-wrap gap-2">
-              <span class="font-mono text-xs border border-cream px-2 py-1">ASTRO JS</span>
-              <span class="font-mono text-xs border border-cream px-2 py-1">TAILWIND</span>
-              <span class="font-mono text-xs border border-cream px-2 py-1">REACT</span>
-              <span class="font-mono text-xs border border-cream px-2 py-1">CSS ANIMATIONS</span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Infografía interactiva sobre los Principios Visuales en el Diseño de Interfaces (UI/UX): Gestalt, Señalética Digital, Prototipado y Pruebas de Usuario."
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>{title}</title>
+    </head>
+    <body class="bg-cream text-dark font-body">
+        <!-- Navigation -->
+        <nav
+            class="fixed top-0 left-0 right-0 z-50 bg-dark text-cream border-b-4 border-brutal-yellow"
+        >
+            <div
+                class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between"
+            >
+                <a
+                    href="#hero"
+                    class="font-display font-bold text-xl tracking-tight hover:text-brutal-yellow transition-colors"
+                >
+                    UI/UX<span class="text-brutal-yellow">.</span>INFO
+                </a>
+                <div class="hidden md:flex items-center gap-1">
+                    <a
+                        href="#seccion-1"
+                        class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors"
+                        >01.GESTALT</a
+                    >
+                    <a
+                        href="#seccion-2"
+                        class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors"
+                        >02.SEMEJANZA</a
+                    >
+                    <a
+                        href="#seccion-3"
+                        class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors"
+                        >03.SEÑALÉTICA</a
+                    >
+                    <a
+                        href="#seccion-4"
+                        class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors"
+                        >04.PROTOTIPADO</a
+                    >
+                    <a
+                        href="#seccion-5"
+                        class="nav-link text-sm font-mono px-3 py-1 hover:text-brutal-yellow transition-colors"
+                        >05.ITERACIÓN</a
+                    >
+                </div>
+                <button
+                    id="mobile-menu-btn"
+                    class="md:hidden border-2 border-cream px-3 py-1 font-mono text-sm hover:bg-brutal-yellow hover:text-dark hover:border-brutal-yellow transition-colors"
+                >
+                    MENÚ
+                </button>
             </div>
-          </div>
-        </div>
-        <div class="border-t-2 border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="font-mono text-xs text-gray-500">© 2026 — DISEÑO DE INTERFACES UI/UX</p>
-          <p class="font-mono text-xs text-gray-500">IUJO — INFOGRAFÍA EDUCATIVA</p>
-        </div>
-      </div>
-    </footer>
+            <!-- Mobile Menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden border-t-2 border-brutal-yellow bg-dark"
+            >
+                <div class="flex flex-col px-4 py-3 gap-2">
+                    <a
+                        href="#seccion-1"
+                        class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow"
+                        >01 — GESTALT</a
+                    >
+                    <a
+                        href="#seccion-2"
+                        class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow"
+                        >02 — SEMEJANZA</a
+                    >
+                    <a
+                        href="#seccion-3"
+                        class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow"
+                        >03 — SEÑALÉTICA</a
+                    >
+                    <a
+                        href="#seccion-4"
+                        class="font-mono text-sm py-2 border-b border-gray-700 hover:text-brutal-yellow"
+                        >04 — PROTOTIPADO</a
+                    >
+                    <a
+                        href="#seccion-5"
+                        class="font-mono text-sm py-2 hover:text-brutal-yellow"
+                        >05 — ITERACIÓN</a
+                    >
+                </div>
+            </div>
+        </nav>
 
-    <!-- Scroll Animation Script -->
-    <script>
-      // Intersection Observer for scroll animations
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+        <main>
+            <slot />
+        </main>
+
+        <!-- Footer -->
+        <footer
+            class="bg-dark text-cream border-t-4 border-brutal-yellow py-12 px-4"
+        >
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <h3 class="font-display font-bold text-2xl mb-4">
+                            UI/UX<span class="text-brutal-yellow">.</span>INFO
+                        </h3>
+                        <p
+                            class="font-body text-sm text-gray-400 leading-relaxed"
+                        >
+                            Infografía interactiva sobre los Principios Visuales
+                            en el Diseño de Interfaces. Proyecto educativo IUJO.
+                        </p>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-mono font-bold text-brutal-yellow mb-4 text-sm tracking-wider"
+                        >
+                            SECCIONES
+                        </h4>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="#seccion-1"
+                                    class="text-sm hover:text-brutal-yellow transition-colors"
+                                    >Gestalt y Proximidad</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#seccion-2"
+                                    class="text-sm hover:text-brutal-yellow transition-colors"
+                                    >Semejanza y Continuidad</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#seccion-3"
+                                    class="text-sm hover:text-brutal-yellow transition-colors"
+                                    >Señalética y Affordance</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#seccion-4"
+                                    class="text-sm hover:text-brutal-yellow transition-colors"
+                                    >Prototipado</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#seccion-5"
+                                    class="text-sm hover:text-brutal-yellow transition-colors"
+                                    >Pruebas e Iteración</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4
+                            class="font-mono font-bold text-brutal-yellow mb-4 text-sm tracking-wider"
+                        >
+                            TECNOLOGÍAS
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="font-mono text-xs border border-cream px-2 py-1"
+                                >ASTRO JS</span
+                            >
+                            <span
+                                class="font-mono text-xs border border-cream px-2 py-1"
+                                >TAILWIND</span
+                            >
+                            <span
+                                class="font-mono text-xs border border-cream px-2 py-1"
+                                >REACT</span
+                            >
+                            <span
+                                class="font-mono text-xs border border-cream px-2 py-1"
+                                >CSS ANIMATIONS</span
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-t-2 border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
+                >
+                    <p class="font-mono text-xs text-gray-500">
+                        © 2026 — DISEÑO DE INTERFACES UI/UX
+                    </p>
+                    <p class="font-mono text-xs text-gray-500">
+                        IUJO — INFOGRAFÍA EDUCATIVA
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll Animation Script -->
+        <script>
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px",
+                },
+            );
+
+            document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+                // Close on link click
+                mobileMenu.querySelectorAll("a").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.add("hidden");
+                    });
+                });
             }
-          });
-        },
-        {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px',
-        }
-      );
 
-      document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-        observer.observe(el);
-      });
+            // Active nav on scroll
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".nav-link");
 
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-        });
-        // Close on link click
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-          });
-        });
-      }
-
-      // Active nav on scroll
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-      
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id') || '';
-          }
-        });
-        navLinks.forEach((link) => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-          }
-        });
-      });
-    </script>
-  </body>
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach((section) => {
+                    if (section instanceof HTMLElement) {
+                        const sectionTop = section.offsetTop - 100;
+                        if (window.scrollY >= sectionTop) {
+                            current = section.getAttribute("id") || "";
+                        }
+                    }
+                });
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${current}`) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>

@@ -1,0 +1,180 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+import ConceptCard from "./ConceptCard.astro";
+import ExampleBlock from "./ExampleBlock.astro";
+import ImagePlaceholder from "./ImagePlaceholder.astro";
+import KeyPoint from "./KeyPoint.astro";
+---
+
+<section
+    id="seccion-4"
+    class="py-20 md:py-32 px-4 bg-dark text-cream border-b-4 border-brutal-green"
+>
+    <div class="max-w-7xl mx-auto">
+        <SectionHeader
+            number="04"
+            expositor="EXPOSITOR 4"
+            title="Prototipado y Diseño Centrado en el Usuario"
+            subtitle="Del boceto en papel al prototipo interactivo: validar antes de programar"
+            color="brutal-green"
+        />
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 stagger-children"
+        >
+            <ConceptCard
+                title="¿Qué es el Prototipado?"
+                icon="✏️"
+                color="brutal-green"
+            >
+                <p>
+                    Es la creación de <strong>modelos experimentales</strong> de una
+                    interfaz. Pueden ser:
+                </p>
+                <ul class="list-none space-y-2 mt-2">
+                    <li class="flex items-start gap-2">
+                        <span class="font-mono text-brutal-green font-bold"
+                            >→</span
+                        >
+                        <strong>Baja Fidelidad:</strong> dibujos a mano, wireframes
+                        en papel
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="font-mono text-brutal-green font-bold"
+                            >→</span
+                        >
+                        <strong>Alta Fidelidad:</strong> diseños interactivos en Figma,
+                        Adobe XD
+                    </li>
+                </ul>
+            </ConceptCard>
+
+            <ConceptCard
+                title="Objetivo del Prototipo"
+                icon="🎯"
+                color="brutal-green"
+            >
+                <p>
+                    <strong>Validar la navegación y la estructura</strong> antes de
+                    que los programadores escriban una sola línea de código. Esto
+                    <strong>ahorra costos y tiempo</strong>.
+                </p>
+                <p>
+                    Un prototipo permite probar el <strong
+                        >"flujo de usuario"</strong
+                    >. ¿Cuántos clics tarda una persona en comprar un producto?
+                    Si son demasiados, el prototipo falló y debe rediseñarse.
+                </p>
+            </ConceptCard>
+        </div>
+
+        <KeyPoint label="Contenido Técnico">
+            Un prototipo permite probar el "flujo de usuario" (user flow). Si un
+            proceso de compra requiere 8 clics cuando podría requerir 3, el
+            prototipo revela este problema antes de invertir en desarrollo.
+            Regla: cada clic extra reduce la conversión un 10%.
+        </KeyPoint>
+
+        <!-- Ejemplo: Wireframe vs Prototipo -->
+        <div class="mt-12">
+            <ExampleBlock
+                title="Plano de Casa vs. Casa Piloto Amueblada"
+                color="brutal-green"
+            >
+                <p
+                    class="font-body text-base md:text-lg text-dark/80 leading-relaxed"
+                >
+                    Imagina la diferencia entre un <strong
+                        >plano de una casa</strong
+                    > (wireframe) y una
+                    <strong>casa piloto amueblada</strong> (prototipo interactivo).
+                    El plano muestra la estructura; la casa piloto te permite <strong
+                        >caminar por ella y sentir el espacio</strong
+                    >.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="animate-on-scroll">
+                        <ImagePlaceholder
+                            label="Wireframe (Baja fidelidad)"
+                            step="1"
+                        />
+                        <div
+                            class="bg-white border-brutal border-t-0 p-4 text-center"
+                        >
+                            <span
+                                class="font-mono text-xs font-bold text-dark tracking-wider"
+                                >BAJA FIDELIDAD</span
+                            >
+                            <p class="text-xs text-dark/60 mt-1">
+                                Estructura y layout básico
+                            </p>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll">
+                        <ImagePlaceholder
+                            label="Prototipo Interactivo (Alta fidelidad)"
+                            step="2"
+                        />
+                        <div
+                            class="bg-white border-brutal border-t-0 p-4 text-center"
+                        >
+                            <span
+                                class="font-mono text-xs font-bold text-dark tracking-wider"
+                                >ALTA FIDELIDAD</span
+                            >
+                            <p class="text-xs text-dark/60 mt-1">
+                                Colores, tipografía, interacciones
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flow comparison -->
+                <div
+                    class="mt-8 animate-on-scroll border-brutal bg-white p-6 text-dark"
+                >
+                    <p
+                        class="font-mono text-xs font-bold mb-4 text-brutal-green tracking-wider"
+                    >
+                        COMPARACIÓN DE FLUJOS
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="font-bold text-sm mb-3">
+                                ❌ Sin prototipo (8 clics)
+                            </p>
+                            <div class="space-y-1 font-mono text-xs">
+                                <p>1. Buscar producto</p>
+                                <p>2. Seleccionar categoría</p>
+                                <p>3. Filtrar resultados</p>
+                                <p>4. Ver producto</p>
+                                <p>5. Seleccionar talla</p>
+                                <p>6. Agregar al carrito</p>
+                                <p>7. Ir al carrito</p>
+                                <p class="text-brutal-red font-bold">
+                                    8. Completar compra 😤
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm mb-3">
+                                ✅ Con prototipo (3 clics)
+                            </p>
+                            <div class="space-y-1 font-mono text-xs">
+                                <p>1. Buscar → ver producto</p>
+                                <p>2. Seleccionar + agregar</p>
+                                <p class="text-brutal-green font-bold">
+                                    3. Compra rápida ✅
+                                </p>
+                                <p class="text-dark/40 mt-2">
+                                    Flujo optimizado
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ExampleBlock>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,160 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+import ConceptCard from "./ConceptCard.astro";
+import ExampleBlock from "./ExampleBlock.astro";
+import ImagePlaceholder from "./ImagePlaceholder.astro";
+import KeyPoint from "./KeyPoint.astro";
+---
+
+<section id="seccion-1" class="py-20 md:py-32 px-4 border-b-4 border-dark">
+    <div class="max-w-7xl mx-auto">
+        <SectionHeader
+            number="01"
+            expositor="EXPOSITOR 1"
+            title="Psicología de la Gestalt y Principio de Proximidad"
+            subtitle="Cómo el cerebro organiza el caos visual en patrones con significado"
+            color="brutal-yellow"
+        />
+
+        <!-- Intro a la Gestalt -->
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 stagger-children"
+        >
+            <ConceptCard
+                title="¿Qué es la Gestalt?"
+                icon="🧠"
+                color="brutal-yellow"
+            >
+                <p>
+                    <strong>"Gestalt"</strong> es una palabra alemana que significa
+                    <strong>"forma"</strong> o <strong>"configuración"</strong>.
+                    La teoría dice que el cerebro humano <em
+                        >no ve elementos aislados</em
+                    >, sino que intenta organizar las partes en un <strong
+                        >"todo" coherente</strong
+                    >.
+                </p>
+                <p>
+                    Nuestro cerebro busca patrones, agrupa elementos y completa
+                    formas incluso cuando la información visual está incompleta.
+                    Esto es fundamental para el diseño de interfaces.
+                </p>
+            </ConceptCard>
+
+            <ConceptCard
+                title="Principio de Proximidad"
+                icon="⬛"
+                color="brutal-yellow"
+            >
+                <p>
+                    Los elementos que están <strong>físicamente cerca</strong> se
+                    perciben como
+                    <strong>relacionados</strong> o como un <strong
+                        >grupo funcional</strong
+                    >.
+                </p>
+                <p>
+                    En diseño web, la proximidad crea <strong
+                        >agrupación lógica</strong
+                    >. Si los títulos están muy lejos de sus párrafos, el
+                    usuario se confunde sobre qué texto corresponde a qué
+                    encabezado.
+                </p>
+            </ConceptCard>
+        </div>
+
+        <!-- Technical Deep Dive -->
+        <KeyPoint label="Contenido Técnico">
+            En diseño web, la proximidad crea agrupación lógica. Los espacios
+            entre elementos (margin, padding, gap) son tan importantes como los
+            elementos mismos. El espacio en blanco no es "espacio vacío" — es
+            una herramienta activa de diseño que define relaciones entre
+            componentes.
+        </KeyPoint>
+
+        <!-- Ejemplo Detallado -->
+        <div class="mt-12">
+            <ExampleBlock
+                title="Análisis del Pie de Página (Footer)"
+                color="brutal-yellow"
+            >
+                <p
+                    class="font-body text-base md:text-lg text-dark/80 leading-relaxed"
+                >
+                    Analiza el pie de página de cualquier sitio web. Verás <strong
+                        >columnas separadas por categorías</strong
+                    >
+                    (Nosotros, Soporte, Redes Sociales). La cercanía de los enlaces
+                    bajo cada título le dice al usuario, <strong
+                        >sin necesidad de leer</strong
+                    >, que esos enlaces pertenecen a esa categoría.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <ImagePlaceholder
+                        label="Footer con proximidad correcta"
+                        step="1"
+                    />
+                    <ImagePlaceholder
+                        label="Footer sin agrupación (caótico)"
+                        step="2"
+                    />
+                </div>
+
+                <!-- Visual Demo -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border-brutal bg-white p-6 animate-on-scroll">
+                        <p
+                            class="font-mono text-xs text-brutal-green font-bold mb-4 tracking-wider"
+                        >
+                            ✓ CORRECTO — CON PROXIMIDAD
+                        </p>
+                        <div class="grid grid-cols-3 gap-8">
+                            <div>
+                                <p class="font-bold text-sm mb-2">Nosotros</p>
+                                <p class="text-xs text-dark/60 mb-1">
+                                    Quiénes somos
+                                </p>
+                                <p class="text-xs text-dark/60 mb-1">Equipo</p>
+                                <p class="text-xs text-dark/60">Blog</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm mb-2">Soporte</p>
+                                <p class="text-xs text-dark/60 mb-1">FAQ</p>
+                                <p class="text-xs text-dark/60 mb-1">
+                                    Contacto
+                                </p>
+                                <p class="text-xs text-dark/60">Chat</p>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm mb-2">Redes</p>
+                                <p class="text-xs text-dark/60 mb-1">Twitter</p>
+                                <p class="text-xs text-dark/60 mb-1">
+                                    Instagram
+                                </p>
+                                <p class="text-xs text-dark/60">LinkedIn</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-brutal bg-white p-6 animate-on-scroll">
+                        <p
+                            class="font-mono text-xs text-brutal-red font-bold mb-4 tracking-wider"
+                        >
+                            ✗ INCORRECTO — SIN PROXIMIDAD
+                        </p>
+                        <div class="space-y-3">
+                            <p class="font-bold text-sm">Nosotros</p>
+                            <p class="text-xs text-dark/60">FAQ</p>
+                            <p class="text-xs text-dark/60">Twitter</p>
+                            <p class="font-bold text-sm">Soporte</p>
+                            <p class="text-xs text-dark/60">Instagram</p>
+                            <p class="text-xs text-dark/60">Quiénes somos</p>
+                            <p class="font-bold text-sm">Redes</p>
+                            <p class="text-xs text-dark/60">Contacto</p>
+                        </div>
+                    </div>
+                </div>
+            </ExampleBlock>
+        </div>
+    </div>
+</section>

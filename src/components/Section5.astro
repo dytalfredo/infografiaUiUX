@@ -1,0 +1,214 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+import ConceptCard from "./ConceptCard.astro";
+import ExampleBlock from "./ExampleBlock.astro";
+import ImagePlaceholder from "./ImagePlaceholder.astro";
+import KeyPoint from "./KeyPoint.astro";
+---
+
+<section id="seccion-5" class="py-20 md:py-32 px-4 border-b-4 border-dark">
+    <div class="max-w-7xl mx-auto">
+        <SectionHeader
+            number="05"
+            expositor="EXPOSITOR 5"
+            title="Pruebas de Usuario, Iteración y Mejora Continua"
+            subtitle="Probar, analizar, rediseñar, repetir: el ciclo infinito del buen diseño"
+            color="brutal-purple"
+        />
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 stagger-children"
+        >
+            <ConceptCard
+                title="Pruebas de Usuario"
+                icon="👥"
+                color="brutal-purple"
+            >
+                <p>
+                    Métodos para evaluar la interfaz mediante la <strong
+                        >observación de usuarios reales</strong
+                    >
+                    mientras intentan completar <strong
+                        >tareas específicas</strong
+                    >.
+                </p>
+                <p>
+                    No importa cuánto diseñes: solo un <strong
+                        >usuario real</strong
+                    > puede revelar los problemas que el diseñador no ve.
+                </p>
+            </ConceptCard>
+
+            <ConceptCard title="Iteración" icon="🔄" color="brutal-purple">
+                <p>
+                    Es el <strong>corazón del diseño moderno</strong>. Ninguna
+                    interfaz es perfecta a la primera.
+                </p>
+                <p>
+                    El ciclo: <strong
+                        >Probar → Analizar errores → Rediseñar → Volver a probar</strong
+                    >. Es un proceso de mejora continua e infinita.
+                </p>
+            </ConceptCard>
+        </div>
+
+        <KeyPoint label="Contenido Técnico">
+            Las Pruebas A/B muestran dos versiones de una web a distintos
+            usuarios para ver cuál funciona mejor. Los Mapas de Calor (Heatmaps)
+            revelan dónde hace clic la gente y qué zonas ignoran. Ambas
+            herramientas son fundamentales para la toma de decisiones basada en
+            datos.
+        </KeyPoint>
+
+        <!-- Ejemplo: Carrito de compras -->
+        <div class="mt-12">
+            <ExampleBlock
+                title="Mejora Continua del Carrito de Compras"
+                color="brutal-purple"
+            >
+                <p
+                    class="font-body text-base md:text-lg text-dark/80 leading-relaxed"
+                >
+                    Si una empresa nota que los usuarios <strong
+                        >abandonan el carrito en el paso 3</strong
+                    >, el equipo de diseño itera sobre ese paso específico hasta
+                    que la <strong>tasa de abandono baje</strong>. Es un ciclo
+                    de mejora infinita.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <ImagePlaceholder label="Ejemplo de Prueba A/B" step="1" />
+                    <ImagePlaceholder
+                        label="Mapa de Calor (Heatmap)"
+                        step="2"
+                    />
+                </div>
+
+                <!-- Cycle Diagram -->
+                <div
+                    class="mt-8 animate-on-scroll border-brutal bg-white p-6 text-dark"
+                >
+                    <p
+                        class="font-mono text-xs font-bold mb-6 text-brutal-purple tracking-wider"
+                    >
+                        CICLO DE ITERACIÓN
+                    </p>
+                    <div
+                        class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+                    >
+                        <div
+                            class="border-3 border-dark p-4 bg-brutal-purple/10"
+                        >
+                            <div class="text-3xl mb-2">🧪</div>
+                            <p class="font-display font-bold text-sm">
+                                1. PROBAR
+                            </p>
+                            <p class="text-xs text-dark/60 mt-1">
+                                Test con usuarios reales
+                            </p>
+                        </div>
+                        <div class="border-3 border-dark p-4 bg-brutal-red/10">
+                            <div class="text-3xl mb-2">📊</div>
+                            <p class="font-display font-bold text-sm">
+                                2. ANALIZAR
+                            </p>
+                            <p class="text-xs text-dark/60 mt-1">
+                                Identificar errores
+                            </p>
+                        </div>
+                        <div class="border-3 border-dark p-4 bg-brutal-blue/10">
+                            <div class="text-3xl mb-2">✏️</div>
+                            <p class="font-display font-bold text-sm">
+                                3. REDISEÑAR
+                            </p>
+                            <p class="text-xs text-dark/60 mt-1">
+                                Simplificar solución
+                            </p>
+                        </div>
+                        <div
+                            class="border-3 border-dark p-4 bg-brutal-green/10"
+                        >
+                            <div class="text-3xl mb-2">🔁</div>
+                            <p class="font-display font-bold text-sm">
+                                4. REPETIR
+                            </p>
+                            <p class="text-xs text-dark/60 mt-1">
+                                Ciclo infinito
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A/B Test Visual -->
+                <div class="mt-8 animate-on-scroll">
+                    <p
+                        class="font-mono text-xs font-bold mb-4 text-brutal-purple tracking-wider"
+                    >
+                        DEMO — PRUEBA A/B
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border-brutal bg-white p-6 text-dark">
+                            <p
+                                class="font-mono text-xs font-bold text-brutal-red mb-3"
+                            >
+                                VERSIÓN A — 68% ABANDONO
+                            </p>
+                            <div class="space-y-2 font-mono text-xs">
+                                <div class="bg-brutal-gray p-2">
+                                    Nombre completo
+                                </div>
+                                <div class="bg-brutal-gray p-2">Email</div>
+                                <div class="bg-brutal-gray p-2">Teléfono</div>
+                                <div class="bg-brutal-gray p-2">
+                                    Dirección línea 1
+                                </div>
+                                <div class="bg-brutal-gray p-2">
+                                    Dirección línea 2
+                                </div>
+                                <div class="bg-brutal-gray p-2">Ciudad</div>
+                                <div class="bg-brutal-gray p-2">
+                                    Código postal
+                                </div>
+                                <p
+                                    class="text-brutal-red font-bold text-center mt-2"
+                                >
+                                    😤 Demasiados campos
+                                </p>
+                            </div>
+                        </div>
+                        <div class="border-brutal bg-white p-6 text-dark">
+                            <p
+                                class="font-mono text-xs font-bold text-brutal-green mb-3"
+                            >
+                                VERSIÓN B — 23% ABANDONO
+                            </p>
+                            <div class="space-y-2 font-mono text-xs">
+                                <div class="bg-brutal-gray p-2">Email</div>
+                                <div class="bg-brutal-gray p-2">
+                                    Dirección (autocompletar)
+                                </div>
+                                <div
+                                    class="bg-brutal-green/20 p-3 text-center border-2 border-brutal-green font-bold"
+                                >
+                                    ✅ Pagar con un clic
+                                </div>
+                                <p
+                                    class="text-brutal-green font-bold text-center mt-2"
+                                >
+                                    😊 Formulario simplificado
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <ImagePlaceholder
+                        label="Resultados del ciclo de iteración"
+                        step="3"
+                    />
+                </div>
+            </ExampleBlock>
+        </div>
+    </div>
+</section>
