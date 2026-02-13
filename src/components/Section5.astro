@@ -77,10 +77,15 @@ import KeyPoint from "./KeyPoint.astro";
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                    <ImagePlaceholder label="Ejemplo de Prueba A/B" step="1" />
                     <ImagePlaceholder
-                        label="Mapa de Calor (Heatmap)"
-                        step="2"
+                        src="/mapa.png"
+                        label="Análisis de proximidad"
+                        alt="Ejemplo de proximidad en interfaces"
+                    />
+                    <ImagePlaceholder
+                        src="/ab.png"
+                        label="Análisis de proximidad"
+                        alt="Ejemplo de proximidad en interfaces"
                     />
                 </div>
 
@@ -200,13 +205,6 @@ import KeyPoint from "./KeyPoint.astro";
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="mt-6">
-                    <ImagePlaceholder
-                        label="Resultados del ciclo de iteración"
-                        step="3"
-                    />
                 </div>
             </ExampleBlock>
         </div>
